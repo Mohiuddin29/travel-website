@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours & Travel Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        :root {
+            --red: #EE3623;
+            --white: #ffffff;
+        }
+
+        * {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-weight: 400;
+            transition: .2s linear;
+        }
+
+        *::selection {
+            background: var(--red);
+            color: var(--white);
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('images/image12.jpeg'); 
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .login {
+            position: relative;
+            z-index: 1;
+            background: rgba(238, 54, 35, 0.9);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 1rem;
+            box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+        }
+
+        .login .heading {
+            color: var(--white);
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+        }
+
+        .login-container span {
+            font-size: 1.5rem;
+            display: block;
+            margin: 1rem 0 0.5rem;
+            color: var(--red);
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            height: 3.5rem;
+            padding: 0 1rem;
+            font-size: 1.5rem;
+            background: rgba(238, 54, 35, 0.1);
+            color: var(--red);
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--red);
+            border-radius: .5rem;
+            transition: border-color 0.3s;
+        }
+
+        .login-container input[type="text"]:focus,
+        .login-container input[type="password"]:focus {
+            border-color: var(--red);
+            box-shadow: 0 0 5px rgba(238, 54, 35, 0.5);
+        }
+
+        .login-container .btn {
+            width: 100%;
+            height: 3.5rem;
+            background: var(--red);
+            color: var(--white);
+            border-radius: .5rem;
+            font-size: 1.7rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .login-container .btn:hover {
+            background: #d52a1e;
+        }
+
+        .login-container .btn:active {
+            background: #b82016;
+        }
+    </style>
+</head>
+<body>
+
+<section class="login" id="login">
+    <h1 class="heading">Login</h1>
+    <div class="login-container">
+        <form id="loginForm">
+            <span>Username</span>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <span>Password</span>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <input class="btn" type="submit" value="Verify">
+ </form>
+    </div>
+</section>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        if (username && password) {
+            alert('Login successful! Welcome, ' + username + '!');
+            window.location.href = 'index.html';
+        } else {
+            alert('Please enter both username and password.');
+        }
+    });
+</script>
+
+</body>
+</html>
